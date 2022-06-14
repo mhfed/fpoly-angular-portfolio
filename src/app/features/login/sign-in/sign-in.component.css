@@ -4,7 +4,11 @@
   border: 1px solid #acacac;
   border-radius: 10px;
   display: block;
-  background: #fff;
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 4px #fff, -4px -4px 4px #fff;
+}
+.input-label {
+  color: #fff;
 }
 .btn-login {
   background: #6b0680;
@@ -13,11 +17,19 @@
 }
 .title-login {
   font-weight: bold;
+  color: #fff;
 }
 .inp-login {
   width: 100%;
   height: 40px;
   padding: 0 10px;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  outline: none;
+}
+.inp-login::placeholder {
+  color: #fff;
 }
 
 .container-login {
@@ -25,5 +37,6 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #6b0680;
+  background-image: url("https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/139784416_420769752708054_4978865593758289149_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=174925&_nc_ohc=AsbMnSN5_FgAX8QBT22&_nc_ht=scontent.fhan2-4.fna&oh=00_AT_NOpLy44dGeM8eguzO7qiDRkZnJeKwPoWuClX2nBhjTg&oe=62CE6A87");
+  background-size: cover;
 }

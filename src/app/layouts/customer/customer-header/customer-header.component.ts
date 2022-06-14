@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-customer-header',
   templateUrl: './customer-header.component.html',
-  styleUrls: ['./customer-header.component.css']
+  styleUrls: ['./customer-header.component.css'],
 })
 export class CustomerHeaderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  onLogout(): void {
+    localStorage.removeItem('user');
   }
-
 }

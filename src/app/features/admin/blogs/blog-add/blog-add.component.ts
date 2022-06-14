@@ -26,12 +26,12 @@ export class BlogAddComponent implements OnInit {
 
   validation_messages = {
     title: [
-      { type: 'required', message: 'Đây là trường bắt buộc' },
-      { type: 'minlength', message: 'Độ dài tối thiểu 5 ký tư' },
+      { type: 'required', message: 'This field is required' },
+      { type: 'minlength', message: 'Minlength is 5 characters' },
     ],
-    subTitle: [{ type: 'required', message: 'Đây là trường bắt buộc' }],
-    category: [{ type: 'required', message: 'Đây là trường bắt buộc' }],
-    content: [{ type: 'required', message: 'Đây là trường bắt buộc' }],
+    subTitle: [{ type: 'required', message: 'This field is required' }],
+    category: [{ type: 'required', message: 'This field is required' }],
+    content: [{ type: 'required', message: 'This field is required' }],
   };
   constructor(
     private FormBuilder: FormBuilder,
@@ -41,7 +41,6 @@ export class BlogAddComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {}
-  
 
   submitHandler() {
     this.ModalConfirm.confirm({
@@ -49,12 +48,14 @@ export class BlogAddComponent implements OnInit {
       nzOkText: 'Xác nhận',
       nzCancelText: 'Hủy',
       nzOnOk: () => {
-        this.BlogService.createBlog({...this.myForm.value, createAt: Date()}).subscribe(() => {
+        this.BlogService.createBlog({
+          ...this.myForm.value,
+          createAt: Date(),
+        }).subscribe(() => {
           this.notification.success('Thông báo', 'Thêm blog thành công');
           this.router.navigateByUrl('/admin/blogs');
         });
       },
     });
   }
- 
 }
