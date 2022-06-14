@@ -1,0 +1,26 @@
+.footer {
+  margin-top: 83px;
+  height: 182px;
+  align-items: center;
+}
+.icon-social {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+.icon-social i {
+  font-size: 30px;
+  color: #6b0680;
+}
+.content {
+  text-align: center;
+  padding-top: 30px;
+}
+
+@media (max-width: 425px) {
+  .footer {
+    margin-top: 80px;
+    height: 100px;
+    align-items: center;
+  }
+}

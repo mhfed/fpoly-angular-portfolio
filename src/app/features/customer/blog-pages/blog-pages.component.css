@@ -1,0 +1,128 @@
+.recent-post {
+  background: #edf7fa;
+  padding-bottom: 32px;
+}
+.post-header {
+  display: flex;
+  justify-content: space-between;
+}
+.post-header {
+  padding: 21px 0 15px 0;
+}
+.post-header .title {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+}
+.post-all-a {
+  font-size: 16px;
+  color: #00a8cc;
+  display: flex;
+  align-items: center;
+}
+.post-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+.post-items {
+  width: 100%;
+  border-radius: 2px;
+  padding: 40px 0;
+  position: relative;
+}
+.post-items a {
+  color: #000;
+}
+.post-items::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #acacac;
+}
+.post-items-title h4 {
+  font-size: 30px;
+  font-weight: bold !important;
+  line-height: 38px;
+  word-spacing: -4px;
+}
+.post-item-info {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 12px;
+  padding-bottom: 19px;
+}
+.post-item-details {
+  line-height: 23.5px;
+  letter-spacing: 1.08px;
+  /* white-space: 0.9px; */
+}
+.date {
+  padding-right: 25px;
+  font-size: 18px;
+  position: relative;
+}
+.date::before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 80%;
+  top: 10%;
+  right: 0;
+  background: #000;
+}
+.category {
+  padding-left: 25px;
+  width: 60%;
+  font-size: 18px;
+}
+.blog-title h4 {
+  font-size: 44px;
+  font-weight: bold;
+  padding: 40px 0;
+}
+@media (max-width: 425px) {
+  .container {
+    padding: 0 10px;
+  }
+  .post-header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .post-header .title {
+    font-size: 18px;
+  }
+  .post-all-a {
+    font-size: 14px;
+  }
+  .post-items {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .post-items-title h4 {
+    font-size: 26px;
+  }
+  .date,
+  .category {
+    font-size: 16px;
+  }
+  .date {
+    padding-right: 10px;
+    font-size: 16px;
+  }
+  .category {
+    font-size: 16px;
+    padding-left: 10px;
+  }
+  .post-item-details {
+    letter-spacing: 0;
+  }
+  .blog-title {
+    font-size: 30px;
+  }
+}

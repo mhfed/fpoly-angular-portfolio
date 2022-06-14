@@ -1,0 +1,55 @@
+{
+  "projects": [
+    {
+      "name": "Tại sao developer nên tham gia các sự kiện công nghệ?",
+      "technical": "Js, React, Angular",
+      "images": "https://pdp.edu.vn/wp-content/uploads/2021/06/hinh-anh-gai-xinh-de-thuong-nhat-1.jpg",
+      "description": "Những sự kiện công nghệ thực sự không phải là điều gì quá mới mẻ, nhưng nó chưa bao giờ hết hot đối với hầu hết các bạn trẻ, đặc biệt là những bạn đang làm việc trong ngành lập trình. Mình đã từng tham gia rất nhiều các sự kiện công nghệ với nhiều vai trò khác nhau, từ người tham gia, diễn giả, đến thành viên trong ban tổ chức và cũng có kha khá kinh nghiệm có thể chia sẻ được cho các bạn.",
+      "createAt": "Tue Jun 14 2022 06:59:53 GMT+0700 (Giờ Đông Dương)",
+      "id": 4
+    },
+    {
+      "name": "Quiz App with React and TypeScript",
+      "technical": "ReactJS, TypeScript, Redux, NodeJS",
+      "images": "https://cdn-media-2.freecodecamp.org/w1280/60599216687d62084bf6ac9e.jpg",
+      "description": "Dự án này sẽ giúp bạn thực hành nhiều hơn khi làm việc với DOM và bạn có thể sử dụng bộ đếm đơn giản này trong các dự án khác như đồng hồ pomodoro.",
+      "createAt": "Tue Jun 14 2022 07:03:11 GMT+0700 (Giờ Đông Dương)",
+      "id": 5
+    },
+    {
+      "name": "Tours Page",
+      "technical": "AngularJS, MySQL, PHP",
+      "images": "https://www.freecodecamp.org/news/content/images/size/w1000/2021/03/tours-page.png",
+      "description": "Trong hướng dẫn này, bạn sẽ học cách tạo menu accordion câu hỏi và câu trả lời. Các menu này có thể hữu ích trong việc tiết lộ nội dung cho người dùng theo cách tiến bộ.",
+      "createAt": "Tue Jun 14 2022 07:05:11 GMT+0700 (Giờ Đông Dương)",
+      "id": 6
+    }
+  ],
+  "blogs": [
+    {
+      "title": "Error Boundaries trong React",
+      "subTitle": "Handle render error trong react, không lo sợ lỗi màn hình trắng bóc trong production",
+      "content": "<h2><strong>Vấn đề</strong></h2><p>Chắc hẳn ai lúc mới học code react cũng sẽ gặp những lỗi như này</p><p><img src=\"https://cdn.sanity.io/images/lnge11x2/production/c3286107e8c1e949365de3af1288cfab1119a24e-1144x682.png?w=550\" alt=\"image\"></p><p>Với một react developer đã có kinh nghiệm thì đây sẽ không phải một vấn đề to lớn để fix, nhưng khi một dự án lớn đưa vào production thì sẽ không thể handle được hết các edge cases và nếu render có thể sẽ hiển thị màn hình trắng bóc gây phiền toái cho người dùng. Vậy nên react đã có <strong>Error Boundaries</strong> để handle việc render error này</p><h2><strong>Bắt đầu code</strong></h2><p>Tạo một file <strong>components/ErrorBoundary.jsx</strong></p><p>import { Component } from \"react\";\n\nclass ErrorBoundary extends Component {\n &nbsp;constructor(props) {\n &nbsp; &nbsp;super(props);\n &nbsp; &nbsp;this.state = { hasError: false };\n &nbsp;}\n &nbsp;static getDerivedStateFromError(error) {\n &nbsp; &nbsp;return { hasError: true };\n &nbsp;}\n &nbsp;componentDidCatch(error, errorInfo) {\n &nbsp; &nbsp;// Gửi thông tin error lên server để dev nhận thông tin fix bug\n &nbsp; &nbsp;console.log(error, errorInfo);\n &nbsp;}\n &nbsp;render() {\n &nbsp; &nbsp;if (this.state.hasError) {\n &nbsp; &nbsp; &nbsp;return &lt;h4&gt;Something went wrong&lt;/h4&gt;;\n &nbsp; &nbsp;}\n &nbsp; &nbsp;return this.props.children;\n &nbsp;}\n}\n\nexport default ErrorBoundary;\n</p><blockquote><p><i>Hiện nay error boundaries mới chỉ hỗ trợ react class component, nhưng hoàn toàn có thể viết ra một component riêng và đưa làm wrapper rồi dùng các functional component khác.</i></p></blockquote><p>Đưa component ErrorBoundary vào index.jsx để wrap mọi component làm children của component này</p><p>import \"./index.css\";\n\nimport App from \"./App\";\nimport React from \"react\";\nimport ReactDOM from \"react-dom\";\n\nimport ErrorBoundary from \"./components/ErrorBoundary\";\n\nReactDOM.render(\n &nbsp;&lt;ErrorBoundary&gt;\n &nbsp; &nbsp;&lt;App /&gt;\n &nbsp;&lt;/ErrorBoundary&gt;,\n &nbsp;document.getElementById(\"root\")\n);\n</p><p>Tạo một component để test và có thể tạo ra error khi render</p><p>import { useState } from \"react\";\n\nexport default function App() {\n &nbsp;const [person, setPerson] = useState({ name: \"Bob\" });\n\n &nbsp;return (\n &nbsp; &nbsp;&lt;div&gt;\n &nbsp; &nbsp; &nbsp;&lt;p&gt;Name: {person.name}&lt;/p&gt;\n &nbsp; &nbsp; &nbsp;&lt;button onClick={() =&gt; setPerson(null)}&gt;Set null&lt;/button&gt;\n &nbsp; &nbsp;&lt;/div&gt;\n &nbsp;);\n}\n</p><h2><strong>Kết quả</strong></h2><p>Demo việc handle error</p><p><img src=\"https://cdn.sanity.io/images/lnge11x2/production/e30667cdb4a4e3f4cd8001c34cc47cfa831c3e1a-648x334.gif?w=450\" alt=\"image\"></p><p>Lỗi sẽ được in ra console</p><p><img src=\"https://cdn.sanity.io/images/lnge11x2/production/fb7be18c214ac4d20ba373d94fae47f9f9cb8ade-1062x378.png?w=450\" alt=\"image\"></p><p>Ta có thể gửi error này lên server để dev có thể biết và fix bug trong thời gian sớm nhất.</p>",
+      "category": "React",
+      "createAt": "Tue Jun 14 2022 06:08:01 GMT+0700 (Giờ Đông Dương)",
+      "id": 4
+    }
+  ],
+  "users": [
+    {
+      "email": "member@gmail.com",
+      "password": "$2a$10$UQkZdTYWnFOTvZU9uCV5ouZQ6Jes3ez/HgNQ1EuROeClEEcFnlhB6",
+      "id": 2
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "email": "hieu@gmail.com",
+      "password": "$2a$10$z643AEqvBsdC/239yyDnt.031NRImqaduEsoPXeMHucqwKQE6eShW",
+      "id": 1
+    }
+  ]
+}

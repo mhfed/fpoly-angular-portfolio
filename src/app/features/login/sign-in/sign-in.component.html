@@ -1,0 +1,21 @@
+<div class="container-login">
+    <form nz-form nzLayout="vertical" #formAdd="ngForm" nz-col nzXs="22" nzMd="10" nzLg="8" nzOffset="9"
+        (ngSubmit)="submitForm(formAdd)" class="d-flex flex-col form-sign-up">
+        <h1 class=" d-flex justify-center title-login">Sign up</h1>
+        <nz-form-item>
+            <nz-form-label><strong>Email</strong></nz-form-label>
+            <nz-form-control nzValidatingTip="Validating..." nzSpan="24">
+                <input nz-input name="email" placeholder="email" nzSize="large" class="inp-login" ngModel />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item nz-row>
+            <nz-form-label><strong>Password: </strong></nz-form-label>
+            <nz-form-control nzValidatingTip="Validating...">
+                <input type="password" nz-input name="password" placeholder="password" nzSize="large" class="inp-login" ngModel />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-item class="w-100">
+            <button nz-button nzType="primary" class="btn-login">Submit</button>
+        </nz-form-item>
+    </form>
+</div>

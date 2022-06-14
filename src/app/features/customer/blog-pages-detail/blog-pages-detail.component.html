@@ -1,0 +1,29 @@
+<div class="work-detail container">
+    <div class="project-main">
+        <div class="project-items">
+            <div class="project-item-content">
+                <div class="project-items-title">
+                    <h4>{{ data.title }}</h4>
+                </div>
+                <div class="project-item-info">
+                    <div class="date">
+                        {{ data.createAt }}
+                    </div>
+                    <div class="category">
+                        {{ data.category }}
+                    </div>
+                </div>
+                <div class="project-item-details">
+                    {{ data.subTitle }}
+                </div>
+            </div>
+        </div>
+        <div class="project-items-sub">
+            <div class="project-items-sub-title">
+
+            </div>
+            <div class="project-items-sub-desc" [innerHTML]="data.content"></div>
+
+        </div>
+    </div>
+</div>

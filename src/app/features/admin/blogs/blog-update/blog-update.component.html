@@ -1,0 +1,84 @@
+<h3>Form add Project</h3>
+
+<div class="">
+    <form nz-form nzLayout="vertical" [formGroup]="myForm" (ngSubmit)="submitHandler()">
+        <div>
+            <h2 nz-col [nzSpan]="24" class="d-flex justify-center title-form">Fill content to form</h2>
+        </div>
+        <div nz-row [nzGutter]="[30]">
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label><strong>Title Blog: </strong></nz-form-label>
+                    <nz-form-control nzValidatingTip="Validating...">
+                        <input nz-input name="title" placeholder="Tên sản project" class="input-flied"
+                            formControlName="title" />
+                        <!-- BOX ERROR START -->
+                        <div *ngFor="let validation of validation_messages.title" class="err-box">
+                            <div class="error-message" *ngIf="myForm.controls['title'].errors && (myForm.controls['title'].errors[validation.type] && 
+                                (myForm.controls['title'].dirty || myForm.controls['title'].touched ))">
+                                {{validation.message}}
+                            </div>
+                        </div>
+                        <!-- BOX ERROR END -->
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label><strong>Sub Title: </strong></nz-form-label>
+                    <nz-form-control nzValidatingTip="Validating...">
+                        <input nz-input name="subTitle" placeholder="Tên sản project" class="input-flied"
+                            formControlName="subTitle" />
+                        <!-- BOX ERROR START -->
+                        <div *ngFor="let validation of validation_messages.subTitle" class="err-box">
+                            <div class="error-message" *ngIf="myForm.controls['subTitle'].errors && (myForm.controls['subTitle'].errors[validation.type] && 
+                                (myForm.controls['subTitle'].dirty || myForm.controls['subTitle'].touched ))">
+                                {{validation.message}}
+                            </div>
+                        </div>
+                        <!-- BOX ERROR END -->
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="12">
+                <nz-form-item>
+                    <nz-form-label><strong>Category: </strong></nz-form-label>
+                    <nz-form-control nzValidatingTip="Validating...">
+                        <input nz-input name="category" placeholder="Tên sản project" class="input-flied"
+                            formControlName="category" />
+                        <!-- BOX ERROR START -->
+                        <div *ngFor="let validation of validation_messages.category" class="err-box">
+                            <div class="error-message" *ngIf="myForm.controls['category'].errors && (myForm.controls['category'].errors[validation.type] && 
+                                (myForm.controls['category'].dirty || myForm.controls['category'].touched ))">
+                                {{validation.message}}
+                            </div>
+                        </div>
+                        <!-- BOX ERROR END -->
+                    </nz-form-control>
+                </nz-form-item>
+            </div>
+
+            <div nz-col [nzSpan]="24">
+                <nz-form-item>
+                    <nz-form-label><strong>Content: </strong></nz-form-label>
+                    <ckeditor [editor]="Editor" data="<p>Hello, world!</p>" name="content" formControlName="content">
+                    </ckeditor>
+                    <!-- BOX ERROR START -->
+                    <div *ngFor="let validation of validation_messages.content" class="err-box">
+                        <div class="error-message" *ngIf="myForm.controls['content'].errors && (myForm.controls['content'].errors[validation.type] && 
+                                        (myForm.controls['content'].dirty || myForm.controls['content'].touched ))">
+                            {{validation.message}}
+                        </div>
+                    </div>
+                    <!-- BOX ERROR END -->
+                </nz-form-item>
+            </div>
+            <div nz-col [nzSpan]="24">
+                <nz-form-item class="d-flex justify-end">
+                    <button class="h-40px" nz-button nzType="primary" [disabled]="!myForm.valid">Submit</button>
+                </nz-form-item>
+            </div>
+        </div>
+    </form>
+
+</div>

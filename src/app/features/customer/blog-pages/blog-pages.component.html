@@ -1,0 +1,27 @@
+<div class="blog container">
+    <div class="blog-title">
+        <h4>Blog</h4>
+    </div>
+    <div class="post-main">
+        <div class="post-items" *ngFor="let item of data">
+            <a routerLink="{{item.id}}">
+                <div class="post-items-title">
+                    <h4>{{ item.title }}</h4>
+                </div>
+                <div class="post-item-info">
+                    <div class="date">
+                        {{ item.createAt }}
+                    </div>
+                    <div class="category">
+                        {{ item.category }}
+                    </div>
+                </div>
+                <!-- <div class="post-item-details" [innerHTML]="item.content"></div> -->
+                <div class="post-item-details">
+                    {{ item.subTitle }}
+                </div>
+            </a>
+        </div>
+
+    </div>
+</div>

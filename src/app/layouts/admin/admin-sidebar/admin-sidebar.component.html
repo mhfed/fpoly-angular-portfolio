@@ -1,0 +1,37 @@
+<nz-sider
+  class="menu-sidebar"
+  nzCollapsible
+  nzWidth="256px"
+  nzBreakpoint="md"
+  [(nzCollapsed)]="isCollapsed"
+  [nzTrigger]="null"
+>
+  <div class="sidebar-logo">
+    <a routerLink="/">
+      <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo" />
+      <h1>Website</h1>
+    </a>
+  </div>
+  <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <li nz-submenu nzOpen nzTitle="Blogs" nzIcon="form">
+      <ul>
+        <li nz-menu-item>
+          <a routerLink="blogs">List Blog</a>
+        </li>
+        <li nz-menu-item>
+          <a routerLink="blogs/add">Add Blog</a>
+        </li>
+      </ul>
+    </li>
+    <li nz-submenu nzOpen nzTitle="Projects" nzIcon="form">
+      <ul>
+        <li nz-menu-item>
+          <a routerLink="projects/add">Add Project</a>
+        </li>
+        <li nz-menu-item>
+          <a routerLink="projects">List Project</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nz-sider>

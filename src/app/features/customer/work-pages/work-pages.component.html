@@ -1,0 +1,32 @@
+<div class="work container">
+    <div class="work-title">
+        <h4>Work</h4>
+    </div>
+    <div class="project-main">
+        <div *ngFor="let item of data">
+            <a routerLink="{{item.id}}">
+                <div class="project-items">
+                    <div class="project-item-avatar">
+                        <img src="{{item.images}}" alt="">
+                    </div>
+                    <div class="project-item-content">
+                        <div class="project-items-title">
+                            <h4>{{ item.name }}</h4>
+                        </div>
+                        <div class="project-item-info">
+                            <div class="date">
+                                {{ item.createAt }}
+                            </div>
+                            <div class="category">
+                                {{ item.technical }}
+                            </div>
+                        </div>
+                        <div class="project-item-details">
+                            {{ item.description }}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
